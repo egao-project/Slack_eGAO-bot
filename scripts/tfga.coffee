@@ -2,7 +2,7 @@ module.exports = (robot) ->
 
   robot.hear /IN!/i, (msg) ->
     msg.send msg.random [
-    	"いらしっゃいませ！ 本日も頑張っていきまっしょい!!",
+    	"いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
     	"おいでませ　本日もおきばりやす"
     	"Wellcome to HELL!"
     ]
