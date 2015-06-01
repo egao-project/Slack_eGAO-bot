@@ -5,6 +5,7 @@ module.exports = (robot) ->
     	"いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
     	"おいでませ　本日もおきばりやす"
     	"Wellcome to HELL!"
+    	"べ、べつに @#{msg.message.user.name} に会いたかったわけじゃないんだから！"
     ]
 
   robot.hear /OUT!/i, (msg) ->
