@@ -1,4 +1,3 @@
-module.exports = (robot) ->
 
   num = Math.floor(Math.random() * 10) + 1
   res = ""
@@ -26,6 +25,8 @@ module.exports = (robot) ->
       res = "笑いとまりまへんがな"
     else
       res = "ぼちぼちでんがな"
+
+module.exports = (robot) ->
 
   robot.hear /もうかりまっか/i, (msg) ->
     msg.send res
