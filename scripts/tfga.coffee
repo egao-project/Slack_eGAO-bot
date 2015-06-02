@@ -4,7 +4,7 @@ module.exports = (robot) ->
     msg.send msg.random [
     	"いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
     	"おいでませ　本日もおきばりやす",
-    	"Wellcome to HELL!",
+    	"Welcome to HELL!",
     	"べ、べつに @#{msg.message.user.name} に会いたかったわけじゃないんだから！"
     ]
 
