@@ -18,6 +18,7 @@
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.3.0",
+    "hubot-totsuzen": "0.0.2",
     "hubot-youtube": "^0.1.2",
     "mysql": "^2.7.0",
     "sequelize": "^3.2.0"
