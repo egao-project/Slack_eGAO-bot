@@ -22,13 +22,13 @@ String::lengthByte = ->
     else
       r += 2
   return r
-/!!.*!!/
+
 String::repeat = (n) ->
   return new Array(n + 1).join(this)
 
 module.exports = (robot) ->
 
-  robot.respond /!!.*!!/i, (msg) ->
+  robot.respond /!!.*(.*)?!!/i, (msg) ->
     str = if msg.match[1] then msg.match[1].trim()+"！"
     len = Math.floor(str.lengthByte() / 2)
 
