@@ -29,7 +29,7 @@ module.exports = (robot) ->
       startTime = rows[0].startTime
       Num01 = endTime - startTime
       Num02 = Num01 / 3600 * 10
-      Num03 = Math.ceil(Num02)
+      Num03 = Math.floor(Num02)
       elapsedTime = Num03 / 10  
       msg.send """
       @#{msg.message.user.name} は、#{elapsedTime}時間がんばったよ。お疲れ様！
