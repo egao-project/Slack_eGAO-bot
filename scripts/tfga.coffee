@@ -2,10 +2,10 @@ module.exports = (robot) ->
 
   robot.hear /IN!/i, (msg) ->
     greeting = msg.random [
-      "いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
-      "おいでませ　本日もおきばりやす",
-      "Welcome to HELL!",
-      "べ、べつに @#{msg.message.user.name} に会いたかったわけじゃないんだから！"
+      "Hi! いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
+      "Hi! おいでませ　本日もおきばりやす",
+      "Hi! Welcome to HELL!",
+      "Hi! べ、べつに @#{msg.message.user.name} に会いたかったわけじゃないんだから！"
     ]
     startTime = new Date/1000|0
 #   msg.send #{startTime}
@@ -13,7 +13,7 @@ module.exports = (robot) ->
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
     sequelize.query("UPDATE t_tfga_timecount SET startTime=\'#{startTime}\' WHERE user=\'#{msg.message.user.name}\'").spread ->
       msg.send """
-      @#{msg.message.user.name} の開始時刻を記録！
+      Hi! @#{msg.message.user.name} の開始時刻を記録！
       #{greeting}
       """
 
