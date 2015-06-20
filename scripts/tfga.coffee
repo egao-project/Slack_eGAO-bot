@@ -1,6 +1,8 @@
 module.exports = (robot) ->
 
   robot.hear /IN!/i, (msg) ->
+    if _.contains ['9999_test', '0006_tfga'], msg.envelope.room
+      msg.finish()
     greeting = msg.random [
       "Hi! いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
       "Hi! おいでませ　本日もおきばりやす",
@@ -19,10 +21,11 @@ module.exports = (robot) ->
 
 
   robot.hear /OUT!/i, (msg) ->
+    if _.contains ['9999_test', '0006_tfga'], msg.envelope.room
+      msg.finish()
     elapsedTime = ""
     endTime = new Date/1000|0
 #   msg.send "#{endTime}"
-
     Sequelize = require 'sequelize'
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
     sequelize.query("SELECT * FROM t_tfga_timecount WHERE user=\'#{msg.message.user.name}\'", {type:sequelize.QueryTypes.SELECT}).then (rows) ->
@@ -35,6 +38,4 @@ module.exports = (robot) ->
       @#{msg.message.user.name} は、#{elapsedTime}時間がんばったよ。お疲れ様！
       次回も頑張っていきまっしょい!!
       """
-
-
 
