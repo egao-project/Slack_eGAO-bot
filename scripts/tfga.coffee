@@ -1,3 +1,5 @@
+_ = require 'lodash'
+
 module.exports = (robot) ->
 
   robot.hear /IN!/i, (msg) ->
