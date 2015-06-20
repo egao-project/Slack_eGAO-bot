@@ -1,10 +1,7 @@
-_ = require 'lodash'
 
 module.exports = (robot) ->
 
   robot.hear /IN!/i, (msg) ->
-    unless  _.contains ['#9999_test', '#0006_tfga'], msg.envelope.room
-      msg.finish()
     greeting = msg.random [
       "Hi! いらっしゃいませ！ 本日も頑張っていきまっしょい!!",
       "Hi! おいでませ　本日もおきばりやす",
@@ -23,8 +20,6 @@ module.exports = (robot) ->
 
 
   robot.hear /OUT!/i, (msg) ->
-    unless  _.contains ['#9999_test', '#0006_tfga'], msg.envelope.room
-      msg.finish()
     elapsedTime = ""
     endTime = new Date/1000|0
 #   msg.send "#{endTime}"
