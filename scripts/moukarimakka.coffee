@@ -24,7 +24,7 @@ module.exports = (robot) ->
       when 9
         res = "(*^^*)"
       when 10
-        res = "笑いとまりまへんがな"
+        res = "笑いとまりまへんがなｗｗ"
       else
         res = "ぼちぼちでんがな"
 
