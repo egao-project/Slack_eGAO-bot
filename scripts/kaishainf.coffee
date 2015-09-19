@@ -9,6 +9,9 @@ module.exports = (robot) ->
   robot.hear /会社のホームページ/i, (msg) ->
     msg.send "http://egao-inc.co.jp/"
 
+  robot.hear /会社のHP/i, (msg) ->
+    msg.send "http://egao-inc.co.jp/"
+
   robot.hear /会社のFB/i, (msg) ->
     msg.send "https://www.facebook.com/iiegao"
 
