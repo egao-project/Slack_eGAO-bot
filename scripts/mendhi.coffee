@@ -5,3 +5,6 @@ module.exports = (robot) ->
 
   robot.hear /マンデーとは/i, (msg) ->
     msg.send "ちょｗｗそれただの月曜日やしｗｗｗ"
+
+  robot.hear /大滝さんとは？/i, (msg) ->
+    msg.send "伝説のナンパ師です！"

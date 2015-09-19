@@ -10,7 +10,7 @@ module.exports = (robot) ->
       when 2
         res = "めちゃ儲かってます"
       when 3
-        res = "あきまへんな"
+        res = "あきまへんです"
       when 4
         res = "よろしゅうおます"
       when 5
@@ -20,9 +20,9 @@ module.exports = (robot) ->
       when 7
         res = "堪忍しとくんなはれ"
       when 8
-        res = "(´・ω・`)"
+        res = "あかんわ(´・ω・`)"
       when 9
-        res = "(*^^*)"
+        res = "ぼちぼちでんな(*^^*)"
       when 10
         res = "笑いとまりまへんがなｗｗ"
       else

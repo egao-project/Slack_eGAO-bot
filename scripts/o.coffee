@@ -5,3 +5,6 @@ module.exports = (robot) ->
 
   robot.hear /頑張るぞ/i, (msg) ->
     msg.send "おー！"
+
+  robot.hear /がんばる象/i, (msg) ->
+    msg.send "ｗｗジワるｗｗｗ"
