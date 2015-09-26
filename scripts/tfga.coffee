@@ -43,23 +43,23 @@ module.exports = (robot) ->
       startTime = rows[0].startTime
       username = rows[0].user
       endTime = new Date/1000|0
-      diffMs = endTime - startTime
+      diff = endTime - startTime
 
-      # ミリ秒を日、時、分に分解する
+      # 秒を日、時、分に分解する
       # 経過日数
-      days = parseInt(diffMs/(24*60*60), 10)
+      days = parseInt(diff/(24*60*60), 10)
       if days >= 1
-        diffMs -= days * 24 * 60 * 60
+        diff -= days * 24 * 60 * 60
       else
         days = 0
       # 経過時間
-      hours = parseInt(diffMs/(60*60), 10)
+      hours = parseInt(diff/(60*60), 10)
       if hours >= 1
-        diffMs -= hours * 60 * 60
+        diff -= hours * 60 * 60
       else
         hours = 0
       # 経過分
-      minutes = parseInt(diffMs/(60), 10)
+      minutes = parseInt(diff/(60), 10)
 
       if days is 0
         if hours is 0
@@ -74,6 +74,9 @@ module.exports = (robot) ->
         msg.send """
         @#{username} は、#{days}日#{hours}時間#{minutes}分前にinしました！
         """
+        msg.send """
+        @#{username} は#{startTime}
+        """
 
   robot.hear /CHECK ALL!/i, (msg) ->
     Sequelize = require 'sequelize'
@@ -83,23 +86,23 @@ module.exports = (robot) ->
         startTime = rows[i].startTime
         username = rows[i].user
         endTime = new Date/1000|0
-        diffMs = endTime - startTime
+        diff = endTime - startTime
 
-        # ミリ秒を日、時、分に分解する
+        # 秒を日、時、分に分解する
         # 経過日数
-        days = parseInt(diffMs/(24*60*60), 10)
+        days = parseInt(diff/(24*60*60), 10)
         if days >= 1
-          diffMs -= days * 24 * 60 * 60
+          diff -= days * 24 * 60 * 60
         else
           days = 0
         # 経過時間
-        hours = parseInt(diffMs/(60*60), 10)
+        hours = parseInt(diff/(60*60), 10)
         if hours >= 1
-          diffMs -= hours * 60 * 60
+          diff -= hours * 60 * 60
         else
           hours = 0
         # 経過分
-        minutes = parseInt(diffMs/(60), 10)
+        minutes = parseInt(diff/(60), 10)
 
         if days is 0
           if hours is 0
