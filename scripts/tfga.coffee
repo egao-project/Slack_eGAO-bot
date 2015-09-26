@@ -47,19 +47,19 @@ module.exports = (robot) ->
 
       # ミリ秒を日、時、分に分解する
       # 経過日数
-      days = parseInt(diffMs/(24*60*60*1000), 10)
+      days = parseInt(diffMs/(24*60*60), 10)
       if days >= 1
-        diffMs -= days * 24 * 60 * 60 * 1000
+        diffMs -= days * 24 * 60 * 60
       else
         days = 0
       # 経過時間
-      hours = parseInt(diffMs/(60*60*1000), 10)
+      hours = parseInt(diffMs/(60*60), 10)
       if hours >= 1
-        diffMs -= hours * 60 * 60 * 1000
+        diffMs -= hours * 60 * 60
       else
         hours = 0
       # 経過分
-      minutes = parseInt(diffMs/(60*1000), 10)
+      minutes = parseInt(diffMs/(60), 10)
 
       if days = 0
         if hours = 0
@@ -87,19 +87,19 @@ module.exports = (robot) ->
 
         # ミリ秒を日、時、分に分解する
         # 経過日数
-        days = parseInt(diffMs/(24*60*60*1000), 10)
+        days = parseInt(diffMs/(24*60*60), 10)
         if days >= 1
-          diffMs -= days * 24 * 60 * 60 * 1000
+          diffMs -= days * 24 * 60 * 60
         else
           days = 0
         # 経過時間
-        hours = parseInt(diffMs/(60*60*1000), 10)
+        hours = parseInt(diffMs/(60*60), 10)
         if hours >= 1
-          diffMs -= hours * 60 * 60 * 1000
+          diffMs -= hours * 60 * 60
         else
           hours = 0
         # 経過分
-        minutes = parseInt(diffMs/(60*1000), 10)
+        minutes = parseInt(diffMs/(60), 10)
 
         if days = 0
           if hours = 0
