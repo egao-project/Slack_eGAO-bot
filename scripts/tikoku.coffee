@@ -7,4 +7,7 @@ module.exports = (robot) ->
     msg.send "寝ちゃうの？(´・ω・`)"
 
   robot.hear /電車遅延/i, (msg) ->
+    msg.send "まじかJR最低やな(´・ω・`)"
+
+  robot.hear /電車が遅れ/i, (msg) ->
     msg.send "JRあかんな(´・ω・`)"

@@ -15,6 +15,9 @@ module.exports = (robot) ->
   robot.hear /や　ら　な　い　か/i, (msg) ->
     msg.send "https://www.youtube.com/watch?v=6Sosfh60448"
 
+  robot.hear /や ら な い か/i, (msg) ->
+    msg.send "https://ja.wikipedia.org/wiki/%E3%81%8F%E3%81%9D%E3%81%BF%E3%81%9D%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF"
+
   robot.hear /本マグロとは？/i, (msg) ->
     msg.send "クロマグロ（黒鮪、学名：Thunnus orientalis）は、スズキ目サバ科に分類される海水魚の一種。
 
@@ -22,4 +25,3 @@ module.exports = (robot) ->
 
 分類上では大西洋産のタイセイヨウクロマグロ T. thynnus と同種、またはタイセイヨウクロマグロの亜種 T. t. orientalis とする見解もある。
 "
-
