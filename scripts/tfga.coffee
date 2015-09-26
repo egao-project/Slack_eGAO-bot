@@ -74,9 +74,6 @@ module.exports = (robot) ->
         msg.send """
         @#{username} は、#{days}日#{hours}時間#{minutes}分前にinしました！
         """
-        msg.send """
-        @#{username} は#{startTime}
-        """
 
   robot.hear /CHECK ALL!/i, (msg) ->
     Sequelize = require 'sequelize'
