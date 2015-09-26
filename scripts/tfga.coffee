@@ -61,8 +61,8 @@ module.exports = (robot) ->
       # 経過分
       minutes = parseInt(diffMs/(60), 10)
 
-      if days = 0
-        if hours = 0
+      if days is 0
+        if hours is 0
           msg.send """
           @#{username} は、#{minutes}分前にinしました！
           """
@@ -101,8 +101,8 @@ module.exports = (robot) ->
         # 経過分
         minutes = parseInt(diffMs/(60), 10)
 
-        if days = 0
-          if hours = 0
+        if days is 0
+          if hours is 0
             msg.send """
             @#{username} は、#{minutes}分前にinしました！
             """
