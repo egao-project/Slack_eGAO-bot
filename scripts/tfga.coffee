@@ -41,7 +41,7 @@ module.exports = (robot) ->
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
     sequelize.query("SELECT * FROM t_tfga_timecount WHERE user=\'#{msg.message.user.name}\'", {type:sequelize.QueryTypes.SELECT}).then (rows) ->
       startTime = rows[0].startTime
-      username = rows[0].userName
+      username = rows[0].user
       endTime = new Date/1000|0
       diffMs = endTime - startTime
 
@@ -81,7 +81,7 @@ module.exports = (robot) ->
     sequelize.query("SELECT * FROM t_tfga_timecount", {type:sequelize.QueryTypes.SELECT}).then (rows) ->
       for i in [0..rows.length-1]
         startTime = rows[i].startTime
-        username = rows[i].userName
+        username = rows[i].user
         endTime = new Date/1000|0
         diffMs = endTime - startTime
 
