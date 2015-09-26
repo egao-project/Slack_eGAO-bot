@@ -1,6 +1,6 @@
 module.exports = (robot) ->
 
-  robot.hear /今日の大滝さんの運勢/i, (msg) ->
+  robot.hear /今日の運勢/i, (msg) ->
     num = Math.floor(Math.random() * 10) + 1
     res = ""
 
