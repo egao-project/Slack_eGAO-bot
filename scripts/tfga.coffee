@@ -88,13 +88,29 @@ module.exports = (robot) ->
         # ミリ秒を日、時、分に分解する
         # 経過日数
         days = parseInt(diffMs/(24*60*60*1000), 10)
-        diffMs -= days * 24 * 60 * 60 * 1000
+        if days >= 1
+          diffMs -= days * 24 * 60 * 60 * 1000
+        else
+          days = 0
         # 経過時間
         hours = parseInt(diffMs/(60*60*1000), 10)
-        diffMs -= hours * 60 * 60 * 1000
+        if hours >= 1
+          diffMs -= hours * 60 * 60 * 1000
+        else
+          hours = 0
         # 経過分
         minutes = parseInt(diffMs/(60*1000), 10)
 
-        msg.send """
-        @#{username} は、#{days}日#{hours}時間#{minutes}分前にinしました！
-        """
+        if days = 0
+          if hours = 0
+            msg.send """
+            @#{username} は、#{minutes}分前にinしました！
+            """
+          else
+            msg.send """
+            @#{username} は、#{hours}時間#{minutes}分前にinしました！
+            """
+        else
+          msg.send """
+          @#{username} は、#{days}日#{hours}時間#{minutes}分前にinしました！
+          """
