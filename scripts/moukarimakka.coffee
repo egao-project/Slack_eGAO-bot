@@ -14,7 +14,7 @@ module.exports = (robot) ->
       when 4
         res = "よろしゅうおます"
       when 5
-        res = "あかんわ"
+        res = "あかんなー"
       when 6
         res = "やばたん"
       when 7
@@ -26,6 +26,6 @@ module.exports = (robot) ->
       when 10
         res = "笑いとまりまへんがなｗｗ"
       else
-        res = "ぼちぼちでんがな"
+        res = "全然あきまへん"
 
     msg.send res

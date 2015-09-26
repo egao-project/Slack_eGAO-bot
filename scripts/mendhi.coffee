@@ -7,4 +7,4 @@ module.exports = (robot) ->
     msg.send "ちょｗｗそれただの月曜日やしｗｗｗ"
 
   robot.hear /大滝さんとは？/i, (msg) ->
-    msg.send "伝説のナンパ師です！"
+    msg.send "フィリピンの人です！伝説のナンパ師です！"

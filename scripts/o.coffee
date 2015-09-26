@@ -8,3 +8,9 @@ module.exports = (robot) ->
 
   robot.hear /がんばる象/i, (msg) ->
     msg.send "ｗｗジワるｗｗｗ"
+
+  robot.hear /頑張る象/i, (msg) ->
+    msg.send "ｗｗジワるｗｗｗ"
+
+  robot.hear /頑張るzoo/i, (msg) ->
+    msg.send "ｗｗｗ寝るんかいｗｗｗ"

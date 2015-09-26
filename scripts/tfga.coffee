@@ -14,7 +14,7 @@ module.exports = (robot) ->
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
     sequelize.query("UPDATE t_tfga_timecount SET startTime=\'#{startTime}\' WHERE user=\'#{msg.message.user.name}\'").spread ->
       msg.send """
-      @#{msg.message.user.name} の開始時刻を記録！
+      っしゃー！ @#{msg.message.user.name} の開始時刻を記録！
       #{greeting}
       """
 
@@ -34,4 +34,13 @@ module.exports = (robot) ->
       msg.send """
       @#{msg.message.user.name} は、#{elapsedTime}時間がんばったよ。お疲れ様！
       次回も頑張っていきまっしょい!!
+      """
+
+  robot.hear /CHECK!/i, (msg) ->
+    Sequelize = require 'sequelize'
+    sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
+    sequelize.query("SELECT * FROM t_tfga_timecount WHERE user=\'#{msg.message.user.name}\'", {type:sequelize.QueryTypes.SELECT}).then (rows) ->
+      startTime = rows[0].startTime
+      msg.send """
+      @#{msg.message.user.name} は、#{startTime}にinしました！
       """
