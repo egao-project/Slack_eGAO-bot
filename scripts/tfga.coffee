@@ -41,8 +41,19 @@ module.exports = (robot) ->
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
     sequelize.query("SELECT * FROM t_tfga_timecount WHERE user=\'#{msg.message.user.name}\'", {type:sequelize.QueryTypes.SELECT}).then (rows) ->
       startTime = rows[0].startTime
+
+      # ミリ秒を日、時、分に分解する
+      # 経過日数
+      days = parseInt(diffMs/(24*60*60*1000), 10)
+      diffMs -= days * 24 * 60 * 60 * 1000
+      # 経過時間
+      hours = parseInt(diffMs/(60*60*1000), 10)
+      diffMs -= hours * 60 * 60 * 1000
+      # 経過分
+      minutes = parseInt(diffMs/(60*1000), 10)
+
       msg.send """
-      @#{msg.message.user.name} は、#{startTime}にinしました！
+      @#{msg.message.user.name} は、#{days}日#{hours}時間#{minutes}分にinしました！
       """
 
   robot.hear /CHECK ALL!/i, (msg) ->
@@ -51,6 +62,17 @@ module.exports = (robot) ->
     sequelize.query("SELECT * FROM t_tfga_timecount WHERE user=\'#{msg.message.user.name}\'", {type:sequelize.QueryTypes.SELECT}).then (rows) ->
       for i in [0..rows.length-1]
         startTime = rows[i].startTime
+
+        # ミリ秒を日、時、分に分解する
+        # 経過日数
+        days = parseInt(diffMs/(24*60*60*1000), 10)
+        diffMs -= days * 24 * 60 * 60 * 1000
+        # 経過時間
+        hours = parseInt(diffMs/(60*60*1000), 10)
+        diffMs -= hours * 60 * 60 * 1000
+        # 経過分
+        minutes = parseInt(diffMs/(60*1000), 10)
+
         msg.send """
-        @#{msg.message.user.name} は、#{startTime}にinしました！
+        @#{msg.message.user.name} は、#{days}日#{hours}時間#{minutes}分にinしました！
         """
