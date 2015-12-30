@@ -1,7 +1,7 @@
 module.exports = (robot) ->
 
   robot.hear /木更津/i, (msg) ->
-    num = Math.floor(Math.random() * 4) + 1
+    num = Math.floor(Math.random() * 12) + 1
     res = ""
 
     switch num
