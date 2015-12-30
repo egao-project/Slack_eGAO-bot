@@ -15,7 +15,5 @@ module.exports = (robot) ->
         res = "http://www.city.kisarazu.lg.jp/"
       when 5
         res = "http://loca.ash.jp/show/2002/d200201_cats.htm"
-      else
-        res = "きゃっつあい(´・ω・｀)"
 
     msg.send res
