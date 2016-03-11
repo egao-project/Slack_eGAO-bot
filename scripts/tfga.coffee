@@ -12,8 +12,7 @@ module.exports = (robot) ->
 #   msg.send #{startTime}
     Sequelize = require 'sequelize'
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
-#    sequelize.query("UPDATE t_tfga_timecount SET startTime=\'#{startTime}\' WHERE user=\'#{msg.message.user.name}\'").spread ->
-    sequelize.query("NSERT INTO t_tfga_timecount (user, startTime) VALUES ('\'#{msg.message.user.name}\', \'#{startTime}\') ON DUPLICATE KEY UPDATE user=\'#{msg.message.user.name}\', startTime =\'#{startTime}\'").spread ->
+    sequelize.query("UPDATE t_tfga_timecount SET startTime=\'#{startTime}\' WHERE user=\'#{msg.message.user.name}\'").spread ->
       msg.send """
       っしゃー！ @#{msg.message.user.name} の開始時刻を記録！
       #{greeting}
