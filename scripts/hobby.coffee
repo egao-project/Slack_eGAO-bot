@@ -4,10 +4,13 @@ module.exports = (robot) ->
   robot.hear /さんの趣味は/i, (msg) ->
 
     hobbymsg = msg.match[0]
-    user = hobbymsg.split("さんの")
+###    user = hobbymsg.split("さんの")
     user = user[0].split("@")
     user = user[1]
-###
+    st = hobbymsg.indexOf("@")
+    ed = hobbymsg.lastIndexOf("さんの")
+    user = msg[st..ed]
+
     #@userさんの趣味はhobbyです。
     if hobbymsg.indexOf("です。") not -1
       hobby = hobbymsg.split("趣味は")
@@ -31,4 +34,5 @@ module.exports = (robot) ->
         @#{msg.message.user.name} さんの趣味は、#{hobby}です！
         """
     else###
-      msg.send "いい趣味ですね(*^^*)"
+#      msg.send "いい趣味ですね(*^^*)"
+      msg.send hobbymsg
