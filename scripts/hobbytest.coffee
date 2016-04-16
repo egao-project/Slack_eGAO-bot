@@ -11,4 +11,4 @@ module.exports = (robot) ->
     ed = msg.lastIndexOf("さんの")
     user = msg[st..ed]
 
-    msg.send user
+    msg.send msg
