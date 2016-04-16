@@ -8,7 +8,7 @@ module.exports = (robot) ->
     user = user[0].split("@")
     user = user[1]
 
-    ＃@userさんの趣味はhobbyです。
+    #@userさんの趣味はhobbyです。
     if hobbymsg.indexOf("です。") not -1
       hobby = hobbymsg.split("趣味は")
       hobby = hobby[1].split("です")
@@ -19,7 +19,7 @@ module.exports = (robot) ->
         msg.send """
         っしゃー！ @#{msg.message.user.name} の趣味を覚えた！うおー！
         """
-    ＃@userさんの趣味は？
+    #@userさんの趣味は？
     else if hobbymsg.indexOf("？") not -1
       Sequelize = require 'sequelize'
       sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
@@ -30,3 +30,5 @@ module.exports = (robot) ->
         msg.send """
         @#{msg.message.user.name} さんの趣味は、#{hobby}です！
         """
+    else
+      msg.send "いい趣味ですね(*^^*)"
