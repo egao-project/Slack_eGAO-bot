@@ -1,4 +1,4 @@
-
+###
 module.exports = (robot) ->
 
   robot.hear /さんの趣味は/i, (msg) ->
@@ -29,3 +29,4 @@ module.exports = (robot) ->
         """
     else
       msg.send "だれですかそれ(*^^*)"
+###

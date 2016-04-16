@@ -7,8 +7,8 @@ module.exports = (robot) ->
 #    user = user[0].split("@")
 #    user = user[1]
 
-    st = msg.indexOf("@")
-    ed = msg.lastIndexOf("さんの")
-    user = msg[st..ed]
+    #st = msg.indexOf("@")
+    #ed = msg.lastIndexOf("さんの")
+    #user = msg[st..ed]
 
     msg.send msg
