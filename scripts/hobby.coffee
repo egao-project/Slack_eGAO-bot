@@ -25,3 +25,5 @@ module.exports = (robot) ->
         msg.send """
         @#{msg.message.user.name} さんの趣味は、#{hobby}です！
         """
+    else
+      msg.send "だれですかそれ(*^^*)"

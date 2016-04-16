@@ -10,7 +10,7 @@ module.exports = (robot) ->
       when 2
         res = "きゃっつあい(´・ω・｀)"
       when 3
-        res = "きゃっつあい(´・ω・｀)"
+        res = "岡田准一のcatsのeye(´・ω・｀)"
       when 4
         res = "http://www.city.kisarazu.lg.jp/"
       when 5
