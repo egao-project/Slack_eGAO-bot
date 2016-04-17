@@ -1,9 +1,9 @@
 
 module.exports = (robot) ->
 
-  robot.hear /さんの趣味は/i, (msg) ->
+  robot.hear /さんの趣味は(.*)/i, (msg) ->
 
-    hobbymsg = msg.match[1]
+    hobbymsg = msg.match[0]
 ###    user = hobbymsg.split("さんの")
     user = user[0].split("@")
     user = user[1]
