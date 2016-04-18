@@ -5,10 +5,12 @@ module.exports = (robot) ->
 
     user = msg.match[1]
     hobby = msg.match[2].split("です")[0]
-
+    msg.send """#{user}---#{hobby}"""
+###
     Sequelize = require 'sequelize'
     sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
     sequelize.query("UPDATE t_hobby SET hobby=\'#{hobby}\' WHERE user=\'#{user}\'").spread ->
       msg.send """
       っしゃー！ @#{user} の趣味を覚えた！うおー！
       """
+###
