@@ -4,15 +4,13 @@ module.exports = (robot) ->
   robot.hear /さんの趣味は(.*)/i, (msg) ->
 
     hobbymsg = msg.match[0]
-    st = hobbymsg.indexOf("趣味は") + 3
-    ed = hobbymsg.indexOf("です。")
-    hobby = hobbymsg[st..ed]
-    msg.send hobby
+    msg.send msg.match[1]
 ###
     #@userさんの趣味はhobbyです。
     if hobbymsg.indexOf("です。") not -1
-      hobby = hobbymsg.split("趣味は")
-      hobby = hobby[1].split("です")
+      st = hobbymsg.indexOf("趣味は") + 3
+      ed = hobbymsg.indexOf("です。") - 1
+      hobby = hobbymsg[st..ed]
 
       Sequelize = require 'sequelize'
       sequelize = new Sequelize 'mysql://bc102bac352f71:14ea5a66@us-cdbr-iron-east-02.cleardb.net/heroku_884b40b85614dd1'
