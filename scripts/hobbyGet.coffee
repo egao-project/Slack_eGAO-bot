@@ -1,7 +1,7 @@
 
 module.exports = (robot) ->
 
-  robot.hear /(.*)さんの趣味は？/i, (msg) ->
+  robot.hear /(.*)さんの趣味は何？/i, (msg) ->
 
     user = msg.match[1].split("@")[1]
 
