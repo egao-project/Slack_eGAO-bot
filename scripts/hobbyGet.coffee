@@ -21,6 +21,6 @@ module.exports = (robot) ->
         username = rows[i].user
         hobby = rows[i].hobby
 
-            msg.send """
-            @#{username} さんの趣味は、#{hobby}だよ！
-            """
+        msg.send """
+        @#{username} さんの趣味は、#{hobby}だよ！
+        """
