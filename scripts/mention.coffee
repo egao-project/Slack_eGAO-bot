@@ -7,7 +7,7 @@ module.exports = (robot) ->
     message = msg.match[1].split(/\n|\r\n|\s/)[1]      # メッセージ
 
     unless message?
-      sendMessage = "@#{user} 改行した？"
+      sendMessage = "@#{user} ｽﾞｲ₍₍(ง˘ω˘)ว⁾⁾ｽﾞｲ"
       msg.send sendMessage
       return
 
@@ -65,12 +65,12 @@ module.exports = (robot) ->
         mention = "hitsut"
 
       else
-        sendMessage = "@#{user} 誰宛やそれ"
+        sendMessage = "@#{user} ('ω') ﾀﾞﾚ?"
         msg.send sendMessage
         return
 
     #****************#
     # メッセージ送信 #
     #****************#
-    sendMessage = "@#{mention}\n#{message}"
+    sendMessage = "@#{mention} from:#{user}\n#{message}"
     msg.send sendMessage
