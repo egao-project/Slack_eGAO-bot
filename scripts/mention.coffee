@@ -2,19 +2,22 @@ module.exports = (robot) ->
 
   robot.hear /^＠(.*)/i, (msg) ->
 
-    user = msg.message.user.name                       # 発言者
-    destination = msg.match[1].split(/\n|\r\n|\s/)[0]  # 発進先
-    message = msg.match[1].split(/\n|\r\n|\s/)[1]      # メッセージ
+    from = msg.message.user.name                   # 発言者
+    to = msg.match[1].split(/\r\n|\n|\r|\s/)[0]    # 発進先
 
-    unless message?
-      sendMessage = "@#{user} ｽﾞｲ₍₍(ง˘ω˘)ว⁾⁾ｽﾞｲ"
+    # メッセージ 空白・改行を削除し、送信先も削除
+    message = msg.match[1].replace(/[\r\n|\n|\r|\s]/g, "")
+    message = message.replace(to, "")
+
+    if message is ""
+      sendMessage = "@#{from} ｽﾞｲ₍₍(ง˘ω˘)ว⁾⁾ｽﾞｲ"
       msg.send sendMessage
       return
 
     #********#
     # 送信先 #
     #********#
-    switch destination
+    switch to
 
       # 田中 寿法
       when "寿さん", "寿", "代表", "社長", "シャッチョさん"
@@ -82,13 +85,22 @@ module.exports = (robot) ->
 
       # 指定外
       else
-        sendMessage = "@#{user} ('ω') ﾀﾞﾚ?"
+        sendMessage = "@#{from} ('ω') ﾀﾞﾚ?"
         msg.send sendMessage
         return
 
     #****************#
     # メッセージ送信 #
     #****************#
-    sendMessage = '@#{mention}  from:#{user}\n#{message}'
+    if mention is "ohtakis"
+      sendMessage = """
+                    ＿人人人人人人＿
+                    ＞  @ohtakis  ＜
+                    ￣Y^Y^Y^Y^Y^￣
+                    #{message}
+                    """
+    else
+      # sendMessage = '@#{mention}  from:#{from}\n#{message}'
+      sendMessage = "@#{mention}  from:#{from}\n#{message}"
 
     msg.send sendMessage
