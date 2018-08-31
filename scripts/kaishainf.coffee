@@ -17,3 +17,6 @@ module.exports = (robot) ->
 
   robot.hear /スタジオのFB/i, (msg) ->
     msg.send "https://www.facebook.com/groups/1019489301397547/"
+
+  robot.hear /健康診断/i, (msg) ->
+    msg.send "予約しろよ！　https://www.its-kenpo.or.jp/kanri/chokuei/yoyaku/guide_index_kojin.html"
