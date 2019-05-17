@@ -1,4 +1,4 @@
 module.exports = (robot) ->
 
-  robot.hear /don/i, (msg) ->
+  robot.hear /:don:/i, (msg) ->
     msg.send "ドーン！"
