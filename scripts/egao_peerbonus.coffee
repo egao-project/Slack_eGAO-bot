@@ -1,4 +1,4 @@
 module.exports = (robot) ->
 
-  robot.hear /:don:/i, (msg) ->
+  robot.hear /:egao_peerbonus:/i, (msg) ->
     msg.send "ドーン！"
